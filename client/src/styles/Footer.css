@@ -12,6 +12,8 @@
 }
 
 .footer-container>p {
+    display: flex;
+    justify-content: center;
     margin-bottom: 1.5rem;
     font-size: 2rem;
     font-weight: bold;
@@ -20,13 +22,13 @@
 .footer-img-container {
     display: flex;
     flex-direction: row;
+    justify-content: center;
     gap: 2rem;
     margin-bottom: 1.5rem;
-    ;
 }
 
 .footer-img-container>img {
-    width: 10rem;
+    width: 8rem;
 }
 
 .footer-ul {
@@ -44,6 +46,7 @@
 }
 
 .footer-copyright-container>p {
+    display: flex;
+    justify-content: center;
     margin-bottom: .5rem;
-
 }
