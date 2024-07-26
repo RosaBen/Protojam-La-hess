@@ -2,7 +2,6 @@
 import { useBasket } from '../hooks/useContext';
 import PropTypes from 'prop-types';
 
-
 import '../styles/PrestationCard.css';
 
 
