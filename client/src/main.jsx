@@ -7,6 +7,7 @@ import App from './App.jsx';
 import Home from './pages/Home';
 import './styles/home.css';
 import './index.css';
+import './styles/filter.css';
 
 const router = createBrowserRouter([
   {
