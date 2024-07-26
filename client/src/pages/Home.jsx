@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Papa from 'papaparse';
@@ -20,19 +19,6 @@ export default function Home() {
 
   return (
     <>
-
-      <h1>TOTO</h1>
-    
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, voluptates distinctio ducimus perspiciatis commodi quisquam tempore soluta fugiat fuga dolorum quidem dicta aliquid veritatis ipsam inventore, neque, explicabo sequi cupiditate.</p>
-      <div className="prestation-container">
-        {datas.map((data, index) => (
-          <PrestationCard 
-            key={index}
-            product={data}
-            
-          />
-        ))}
-
       <div className="home-container">
         <div className="introduction-container">
           <h1>Voyagez dans le temps et apprenez des maîtres de l&apos;Histoire</h1>
@@ -40,10 +26,11 @@ export default function Home() {
           <p>Plongez dans le passé et apprenez des maîtres historiques. Que ce soit la momification en Égypte antique, la philosophie grecque, les forges vikings ou les arts de la Renaissance, voyagez à travers le temps pour des cours uniques et enrichissants. Découvrez les secrets des civilisations anciennes et vivez une aventure éducative inoubliable.</p>
         </div>
         <div className="prestation-container">
-          {datas.map((data) => (
+          {datas.map((data, index) => (
             <PrestationCard
-              key={data.id}
+              key={index}
               product={data}
+
             />
           ))}
         </div>
