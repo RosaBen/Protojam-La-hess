@@ -6,14 +6,23 @@
     background-color: #f9f9f9;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    
+    
+}
+.prestation-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
 }
 
 .prestation-image {
-    max-width: 100%;
+    max-width: 150px;
     height: auto;
     border-radius: 8px;
 }
-
+  
 .prestation-card h2 {
     font-size: 1.5em;
     margin: 0.5em 0;
@@ -26,4 +35,4 @@
 .prestation-card p strong {
     display: block;
     margin-top: 0.5em;
-}
+} 

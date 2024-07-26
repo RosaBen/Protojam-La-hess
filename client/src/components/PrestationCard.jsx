@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
+import  { useState } from 'react';
+
 import '../styles/PrestationCard.css';
 
 const PrestationCard = ({ product }) => {
@@ -12,8 +12,9 @@ const PrestationCard = ({ product }) => {
   };
 
   return (
+    
     <div className="prestation-card">
-      {console.info(product)} 
+      {/* {console.info(product)}  */}
       <img src={product.image} alt={product.nom} className="prestation-image" />
       <h3>{product.nom}</h3>
       <p>{product.description}</p>
@@ -21,6 +22,7 @@ const PrestationCard = ({ product }) => {
       <p>Prix: {product.prix} {product.devise}</p>
       <button onClick={addArticle}>Ajouter au panier</button>
     </div>
+   
   );
 };
 
@@ -28,7 +30,7 @@ const PrestationCard = ({ product }) => {
 //   product: PropTypes.shape({
 //     nom: PropTypes.string.isRequired,
 //     description: PropTypes.string.isRequired,
-//     prix: PropTypes.number.isRequired,++
+//     prix: PropTypes.number.isRequired,
 //     epoque: PropTypes.string.isRequired,
 //     image: PropTypes.string.isRequired,
 //     devise: PropTypes.string.isRequired,
@@ -36,16 +38,5 @@ const PrestationCard = ({ product }) => {
 //   }).isRequired,
 // };
 
-// PrestationCard.defaultProps = {
-//   product: {
-//     nom: '',
-//     description: '',
-//     prix: '',
-//     epoque: '',
-//     image: '',
-//     devise: '',
-//     id: '',
-//   }
-// };
 
 export default PrestationCard;
