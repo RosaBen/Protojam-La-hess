@@ -20,6 +20,19 @@ export default function Home() {
 
   return (
     <>
+
+      <h1>TOTO</h1>
+    
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, voluptates distinctio ducimus perspiciatis commodi quisquam tempore soluta fugiat fuga dolorum quidem dicta aliquid veritatis ipsam inventore, neque, explicabo sequi cupiditate.</p>
+      <div className="prestation-container">
+        {datas.map((data, index) => (
+          <PrestationCard 
+            key={index}
+            product={data}
+            
+          />
+        ))}
+
       <div className="home-container">
         <div className="introduction-container">
           <h1>Voyagez dans le temps et apprenez des maîtres de l&apos;Histoire</h1>
@@ -37,6 +50,7 @@ export default function Home() {
         <div className="review-container">
           <Review />
         </div>
+
       </div>
     </>
   );
