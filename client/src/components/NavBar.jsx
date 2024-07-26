@@ -1,9 +1,11 @@
-import Basket from "./Basket";
+import { useBasket } from "../hooks/useContext";
 import Filter from "./Filter";
 import SearchBox from "./SearchBox";
 
 
 export default function Navbar() {
+    const { basket } = useBasket();
+    console.info(basket)
   return (
     <>
       <nav className="navbar">
@@ -12,9 +14,16 @@ export default function Navbar() {
         </div>
         <div><Filter/></div>
         <div className="navbar_basket">
-            <Basket/>
+        <p>
+            {basket.length
+              ? `Il y a ${basket.length} dans votre panier`
+              : "Votre panier est vide"}
+          </p>
         </div>
       </nav>
     </>
   );
 }
+
+
+

@@ -1,12 +1,17 @@
+ 
+import { useBasket } from '../hooks/useContext';
+import PropTypes from 'prop-types';
+
 import { useState } from 'react';
+
 
 import '../styles/PrestationCard.css';
 
-const PrestationCard = ({ product }) => {
-  const [basket, setBasket] = useState([]);
 
-  console.info(basket);
-
+const PrestationCard = ({ product}) => {
+  
+  const { basket, setBasket } = useBasket();
+  console.log(basket)
   const addArticle = () => {
     setBasket(prevBasket => [...prevBasket, product]);
   };
@@ -30,17 +35,17 @@ const PrestationCard = ({ product }) => {
   );
 };
 
-// PrestationCard.propTypes = {
-//   product: PropTypes.shape({
-//     nom: PropTypes.string.isRequired,
-//     description: PropTypes.string.isRequired,
-//     prix: PropTypes.number.isRequired,
-//     epoque: PropTypes.string.isRequired,
-//     image: PropTypes.string.isRequired,
-//     devise: PropTypes.string.isRequired,
-//     id: PropTypes.string.isRequired,
-//   }).isRequired,
-// };
+PrestationCard.propTypes = {
+  product: PropTypes.shape({
+    nom: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    prix: PropTypes.number.isRequired,
+    epoque: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    devise: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+  }).isRequired,
+};
 
 
 export default PrestationCard;

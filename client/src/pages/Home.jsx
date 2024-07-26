@@ -1,8 +1,8 @@
-
 import { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Papa from 'papaparse';
 import PrestationCard from '../components/PrestationCard';
+import Review from '../components/Review';
 import '../styles/home.css';
 
 export default function Home() {
@@ -26,14 +26,18 @@ export default function Home() {
           <p>Plongez dans le passé et apprenez des maîtres historiques. Que ce soit la momification en Égypte antique, la philosophie grecque, les forges vikings ou les arts de la Renaissance, voyagez à travers le temps pour des cours uniques et enrichissants. Découvrez les secrets des civilisations anciennes et vivez une aventure éducative inoubliable.</p>
         </div>
         <div className="prestation-container">
-          {datas.map((data) => (
+          {datas.map((data, index) => (
             <PrestationCard
-              key={data.id}
+              key={index}
               product={data}
 
             />
           ))}
         </div>
+        <div className="review-container">
+          <Review />
+        </div>
+
       </div>
     </>
   );
