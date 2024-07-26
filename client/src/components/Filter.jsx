@@ -7,25 +7,33 @@ export default function Filter() {
 
     // const [productList, setProductList] = useState([]);
     const [datas, setDatas] = useState([]);
+    const [selection, setSelection] = useState("");
+    const [uniqueEpoques, setUniqueEpoques] = useState([]);
+    // const uniqueEpoques = Array.from(new Set(datas.map((product) => product.epoque)));
+    
+    console.log("titi", uniqueEpoques)
 
     useEffect(() => {
         getListProduct().then((data) => {
             Papa.parse(data, {
               header: true,
-              complete: (result) => setDatas(result.data),
+              complete: (result) => {
+                const epoques = Array.from(new Set(result.data.map((product) => product.epoque)));
+                setDatas(result.data);
+                setUniqueEpoques(epoques);
+              },
               error: (error) => console.error(error),
             });
           });
-    }, []);
+    }, [datas]);
 
     console.info("toto",datas);
     
-    const [selection, setSelection] = useState("");
     const handleChangeSelection = (event) => {
-      setSelection(event.target.value);
+        setSelection(event.target.value);
     };
     const filteredProductList = datas
-      .filter((product) => product.epoque === selection || selection === "");
+      .filter((era) => era.epoque === selection || selection === "");
 
     return (
     <>
@@ -34,9 +42,9 @@ export default function Filter() {
           Filtrer les produits par periode:
           <select onChange={handleChangeSelection}>
             <option >Toutes les périodes</option>
-            {datas.map((product) => (
-                <option key={product.id} value={product.epoque}>
-                    {product.epoque}
+            {uniqueEpoques.map((epoque) => (
+                <option key={epoque} value={epoque}>
+                    {epoque}
                 </option>
             ))} 
             </select>
@@ -62,6 +70,7 @@ Filter.propTypes = {
             nom: PropTypes.string.isRequired,
             epoque: PropTypes.string.isRequired,
             id: PropTypes.number.isRequired,
+            uniqueEpoques: PropTypes.arrayOf.isRequired,
         })
     ).isRequired,   
 };

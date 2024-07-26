@@ -6,3 +6,4 @@ export function getListProduct() {
         .then((response) => response.data)
         .catch((error) => console.error(error));
 }
+

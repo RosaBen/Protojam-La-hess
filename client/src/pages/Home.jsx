@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <>
       <h1>TOTO</h1>
-    {console.log(datas)}
+    {/* {console.log(datas)} */}
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, voluptates distinctio ducimus perspiciatis commodi quisquam tempore soluta fugiat fuga dolorum quidem dicta aliquid veritatis ipsam inventore, neque, explicabo sequi cupiditate.</p>
       <div className="prestation-container">
         {datas.map((data) => (
