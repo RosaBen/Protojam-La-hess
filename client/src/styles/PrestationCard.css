@@ -1,19 +1,66 @@
-.prestation-card {
-    border: 1px solid #ddd;
-    padding: 16px;
-    margin: 16px;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 300px;
-    
-    
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #E3E6E6;
+}
+
+.introduction-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #232E3E;
+    color: rgb(243, 236, 236);
+}
+
+.introduction-container>h1 {
+    font-size: 2.2rem;
+    margin-top: 1.5rem;
+}
+
+.introduction-container>p {
+    font-size: 1.2rem;
+    margin: 1.5rem 1.5rem;
+}
+
 .prestation-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin: 1rem 0;
+}
+
+.prestation-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.prestation-image-container {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
 
 }
 
@@ -22,7 +69,15 @@
     height: auto;
     border-radius: 8px;
 }
-  
+
+.prestation-text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .4rem;
+}
+
 .prestation-card h2 {
     font-size: 1.5em;
     margin: 0.5em 0;
@@ -35,4 +90,23 @@
 .prestation-card p strong {
     display: block;
     margin-top: 0.5em;
-} 
+}
+
+
+.prestation-card button {
+    background-color: #FFCA44;
+    width: 10rem;
+    padding: .2rem 0;
+    border-radius: .4rem;
+    color: #232E3E;
+    font-size: .9rem;
+    border: solid #f8bd26;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.prestation-card button:hover {
+    background-color: #232E3E;
+    border: solid #181e27;
+    color: rgb(243, 236, 236);
+}
