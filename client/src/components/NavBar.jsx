@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useBasket } from "../hooks/useContext";
-import Filter from "./Filter";
-import SearchBox from "./SearchBox";
+import "../styles/navbar.css";
 
 export default function Navbar() {
     const { basket } = useBasket();
@@ -15,9 +14,7 @@ export default function Navbar() {
         <>
             <nav className="navbar">
                 <div className="navbar_search">
-                    <SearchBox/>
                 </div>
-                <div><Filter/></div>
                 <div className="navbar_basket">
                     <button onClick={togglePopup}>
                         {basket.length

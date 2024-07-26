@@ -1,12 +1,12 @@
- 
+
 import { useBasket } from '../hooks/useContext';
 import PropTypes from 'prop-types';
 
 import '../styles/PrestationCard.css';
 
 
-const PrestationCard = ({ product}) => {
-  
+const PrestationCard = ({ product }) => {
+
   const { basket, setBasket } = useBasket();
   console.log(basket)
   const addArticle = () => {
