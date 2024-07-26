@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Papa from 'papaparse';
 import PrestationCard from '../components/PrestationCard';
+import Review from '../components/Review';
 import '../styles/home.css';
 
 export default function Home() {
@@ -30,9 +31,11 @@ export default function Home() {
             <PrestationCard
               key={data.id}
               product={data}
-
             />
           ))}
+        </div>
+        <div className="review-container">
+          <Review />
         </div>
       </div>
     </>
