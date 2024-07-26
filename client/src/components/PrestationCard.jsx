@@ -1,32 +1,46 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import { useState } from 'react';
+
 import '../styles/PrestationCard.css';
 
-const PrestationCard = ({ nom, description, prix, devise, epoque, image }) => {
+const PrestationCard = ({ product }) => {
+  const [basket, setBasket] = useState([]);
+
+  console.info(basket);
+
+  const addArticle = () => {
+    setBasket(prevBasket => [...prevBasket, product]);
+  };
+
   return (
+
     <div className="prestation-card">
-      <img src={image} alt={nom} className="prestation-image" />
-      <h3>{nom}</h3>
-      <p>{description}</p>
-      <p>Époque: {epoque}</p>
-      <p>Prix: {prix} {devise}</p>
-      
+      {/* {console.info(product)}  */}
+      <div className="prestation-image-container">
+        <img src={product.image} alt={product.nom} className="prestation-image" />
+      </div>
+      <div className="prestation-text-container">
+        <h3>{product.nom}</h3>
+        <p>{product.description}</p>
+        <p>Époque: {product.epoque}</p>
+        <p>Prix: {product.prix} {product.devise}</p>
+        <button onClick={addArticle}>Ajouter au panier</button>
+      </div>
     </div>
+
   );
 };
 
-PrestationCard.propTypes = {
-  nom: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  prix: PropTypes.string.isRequired,
-  epoque: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-  devise: PropTypes.string.isRequired,
-};
+// PrestationCard.propTypes = {
+//   product: PropTypes.shape({
+//     nom: PropTypes.string.isRequired,
+//     description: PropTypes.string.isRequired,
+//     prix: PropTypes.number.isRequired,
+//     epoque: PropTypes.string.isRequired,
+//     image: PropTypes.string.isRequired,
+//     devise: PropTypes.string.isRequired,
+//     id: PropTypes.string.isRequired,
+//   }).isRequired,
+// };
+
 
 export default PrestationCard;
-
-
-
-
-

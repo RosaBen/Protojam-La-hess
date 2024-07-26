@@ -7,32 +7,33 @@ import '../styles/home.css';
 
 export default function Home() {
   const csvData = useLoaderData();
-  const [data, setData] = useState([]);
+  const [datas, setDatas] = useState([]);
 
   useEffect(() => {
     Papa.parse(csvData, {
       header: true,
-      complete: (result) => setData(result.data),
+      complete: (result) => setDatas(result.data),
       error: (error) => console.error(error),
     });
   }, [csvData]);
 
   return (
     <>
-      <h1>TOTO</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, voluptates distinctio ducimus perspiciatis commodi quisquam tempore soluta fugiat fuga dolorum quidem dicta aliquid veritatis ipsam inventore, neque, explicabo sequi cupiditate.</p>
-      <div className="prestation-container">
-        {data.map((item) => (
-          <PrestationCard 
-            key={item.id}
-            nom={item.nom}
-            description={item.description}
-            prix={item.prix}
-            epoque={item.epoque}
-            image={item.image}
-            devise={item.devise}
-          />
-        ))}
+      <div className="home-container">
+        <div className="introduction-container">
+          <h1>Voyagez dans le temps et apprenez des maîtres de l&apos;Histoire</h1>
+          {console.log(datas)}
+          <p>Plongez dans le passé et apprenez des maîtres historiques. Que ce soit la momification en Égypte antique, la philosophie grecque, les forges vikings ou les arts de la Renaissance, voyagez à travers le temps pour des cours uniques et enrichissants. Découvrez les secrets des civilisations anciennes et vivez une aventure éducative inoubliable.</p>
+        </div>
+        <div className="prestation-container">
+          {datas.map((data) => (
+            <PrestationCard
+              key={data.id}
+              product={data}
+
+            />
+          ))}
+        </div>
       </div>
     </>
   );

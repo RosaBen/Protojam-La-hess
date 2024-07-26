@@ -9,13 +9,15 @@
 .footer-container {
     display: flex;
     flex-direction: column;
+    background-color: #222F3E;
+    color: rgb(243, 236, 236);
 }
 
 .footer-container>p {
     display: flex;
     justify-content: center;
-    margin-bottom: 1.5rem;
-    font-size: 2rem;
+    margin: 1.5rem 0;
+    font-size: 1.6rem;
     font-weight: bold;
 }
 
@@ -28,7 +30,8 @@
 }
 
 .footer-img-container>img {
-    width: 8rem;
+    width: 6rem;
+    border-radius: .8rem;
 }
 
 .footer-ul {
