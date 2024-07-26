@@ -1,5 +1,10 @@
+ 
 import { useBasket } from '../hooks/useContext';
 import PropTypes from 'prop-types';
+
+import { useState } from 'react';
+
+
 import '../styles/PrestationCard.css';
 
 
@@ -12,17 +17,21 @@ const PrestationCard = ({ product}) => {
   };
 
   return (
-    
+
     <div className="prestation-card">
       {/* {console.info(product)}  */}
-      <img src={product.image} alt={product.nom} className="prestation-image" />
-      <h3>{product.nom}</h3>
-      <p>{product.description}</p>
-      <p>Époque: {product.epoque}</p>
-      <p>Prix: {product.prix} {product.devise}</p>
-      <button onClick={addArticle}>Ajouter au panier</button>
+      <div className="prestation-image-container">
+        <img src={product.image} alt={product.nom} className="prestation-image" />
+      </div>
+      <div className="prestation-text-container">
+        <h3>{product.nom}</h3>
+        <p>{product.description}</p>
+        <p>Époque: {product.epoque}</p>
+        <p>Prix: {product.prix} {product.devise}</p>
+        <button onClick={addArticle}>Ajouter au panier</button>
+      </div>
     </div>
-   
+
   );
 };
 
